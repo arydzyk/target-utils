@@ -79,7 +79,7 @@ if(CPYTHON)
     ${LIBPYTHONNAME}
     PREFIX ${LIBPYTHONNAME}
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/cpython
-    CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/cpython/configure --prefix=${CMAKE_INSTALL_PREFIX} --enable-shared LDFLAGS=-Wl,-rpath=${CMAKE_INSTALL_PREFIX}/lib > /dev/null
+	CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/cpython/configure --prefix=${CMAKE_INSTALL_PREFIX} --bindir=${CMAKE_CURRENT_BINARY_DIR} --enable-shared LDFLAGS=-Wl,-rpath=${CMAKE_INSTALL_PREFIX}/lib > /dev/null
     BUILD_COMMAND ${CMAKE_MAKE_PROGRAM} -j${N} > /dev/null
     INSTALL_COMMAND ${CMAKE_MAKE_PROGRAM} altinstall > /dev/null
     COMMAND cd ${CMAKE_CURRENT_SOURCE_DIR}/pip_packages &&
